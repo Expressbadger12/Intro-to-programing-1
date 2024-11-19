@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W11 Array Example</title>
+</head>
+<body>
+    <h1>Pizza Chef Array Example</h1>
+
+    <p>Total Pizzas baked: <span id="spnTotalPizzas"></span></p>
+
+    <p>Baking level:<span id="spnlevel"></span></p>
+
+    <label for="numPizza">New Pizzas Baked:</label>
+    <input type="number" id="numPizzas" min="0" max="1000" value="0">
+
+    <button onclick="updateChefStats()">Update Stats</button>
+
+    <p>Toppings: <span id="spnToppings"></span></p>
+
+    <!-- Javascript code goes in between the script tags -->
+    <script>
+        //create some topping variables
+        var topping1 = "Pepperoni";
+        var topping2 = "Mushrooms";
+        var topping3 = "Olives";
+        var topping4 = "Sausages";
+        var topping5 = "Ham";
+        var topping6 = "Anchovies";
+        var topping7 = "Pineapple";
+        var topping8 = "Cinnomen";
+
+       // document.getElementById("spnToppings").innerText = topping1 + ", " + topping2 + ", " + topping3 + ", " + topping4 + ", " + topping5 + ", " + topping6 + ", " + topping7 + ", " + topping8;
+
+        //refactor the toppings code to use an array
+        var arrToppings = ["Pepperoni", "Mushrooms", "Olives", "Sausages", "Ham", "Anchovies", "Pineapple", "Cinnomen"];
+    
+        //print out the toppings in the array using a loop
+        //when looping through an array, start of with the counter = 0
+        //keep looping until the counter == the number of elements in the array
+        //increase the counter by 1 each time the loop runs so you can work with each element in the arrat
+        for (var i = 0; i < arrToppings.length; i++){
+            //sjorthand for variable = variable + new value
+            //variable += new value
+            document.getElementById("spnToppings").innerHTML += arrToppings[i] + ",&nbsp;";
+            //&nbsp is no breaking space, or an HTML space. Only works for innerHTML, not innterText
+            //document.getElementById("spnToppings").innerText = document.getElementById("spnToppings").innerText +
+        }
+    </script>
+</body>
+</html>
