@@ -36,8 +36,8 @@ footer{
     position: absolute; /*this will allow us to move the image around */
     margin-right: 200px;
     width: 400px;
-    left: 100px;
-    top: 100px;
+    left: 800px;
+    top: 800px;
 }
 
 p{
