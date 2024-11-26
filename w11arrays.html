@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W11 Array Example</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Pizza Chef Array Example</h1>
 
-    <p>Total Pizzas baked: <span id="spnTotalPizzas"></span></p>
+    <p>Total Pizzas baked: <span id="spnTotalPizzas">0</span></p>
 
-    <p>Baking level:<span id="spnlevel"></span></p>
+    <p>Baking level: <span id="spnlevel">Beginner Chef</span></p>
 
-    <label for="numPizza">New Pizzas Baked:</label>
+    <label for="numPizzas">New Pizzas Baked:</label>
     <input type="number" id="numPizzas" min="0" max="1000" value="0">
 
     <button onclick="updateChefStats()">Update Stats</button>
@@ -21,6 +27,48 @@
 
     <!-- Javascript code goes in between the script tags -->
     <script>
+        //function to add pizzas baked
+        function updateChefStats(){
+            //get the number of new pizzs
+            var newPizzas = parseInt(document.getElementById("numPizzas").value);
+            // get the number of old pizzas
+            var oldPizzas = parseInt(document.getElementById("spnTotalPizzas").textContent);
+
+            console.log("newPizzas=" + newPizzas);
+            console.log("oldPizzas=" + oldPizzas);
+
+            // add old and new pizzas together
+            var totalPizzas = newPizzas + oldPizzas;
+
+            // update the pizza counter on the HTML page with the new value
+            document.getElementById("spnTotalPizzas").textContent = totalPizzas;
+
+            //this variable will track the level of the chef, based on how many pizzas they have baked
+            var chefLevel = "";
+
+            //add some decision logic to check for the pizza chef level
+            if (totalPizzas > 500){
+                chefLevel = "Master Chef";
+            } // if more than 300 pizzas baked
+            else if (totalPizzas > 300){
+                chefLevel = "Expert Chef";
+            } // if more than 100 pizzas baked
+            else if (totalPizzas > 100){
+                chefLevel = "Skilled Chef";
+            } // otherwise, this catch-all else statement will run
+            else{
+                chefLevel = "Beginner Chef";
+            }
+
+            document.getElementById("spnlevel").textContent = chefLevel
+            console.log("ChefLevel=" + chefLevel);
+        }
+
+
+
+
+
+
         //create some topping variables
         var topping1 = "Pepperoni";
         var topping2 = "Mushrooms";
