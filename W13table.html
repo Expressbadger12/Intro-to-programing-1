@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W13 Table Example</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- add some embedded CSS to make our table look better -->
+    <style>
+        table{
+            width: 80%;
+            border-collapse:  collapse; 
+        }
+
+        th, td{
+            border: 1px solid black;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- inline styke <h1 style="color: purple;"> -->
+        <h1>Table Example</h1>
+        <!-- Create a nav section to hold the menu -->
+        <nav>
+            <a href="index.html">Home</a>
+            <!-- br is line break -->
+            <br>
+            <a href="boards.html">Boards</a>
+            <br>
+            <!-- Add a link to our css file -->
+            <a href="W3Game.html">Game</a>
+            <br>
+            <a href="w11Sound.html">Sound Example</a>
+        </nav>
+    </header>
+
+    <!-- To create a table, use the table tag; data is displayed in rows and columns, think Excel spreadsheet -->
+    <table>
+        <!-- tr is the table row -->
+        <tr>
+            <!-- th is heading (row or header) -->
+            <th>Language</th>
+            <th>fact</th>
+        </tr>
+        <!-- Add sine data -->
+        <tr>
+            <!-- td is the table data/ cell / colum -->
+             <td>JavaScript</td>
+             <td>Javascript was created by Brandon Eich over a week during the holidays</td>
+        </tr>
+
+        <tr>
+            <td>Python</td>
+            <td>Python was created by Guido van Rossum over a weekend and was first released in 1991</td>
+        </tr>
+
+        <tr>
+            <td>C++</td>
+            <td>C++ was developed by Bjarne Stroutstup at Bells labs as an extension of the C programming language</td>
+        </tr>
+
+        <tr>
+            <td>Java</td>
+            <td>Java was developed by James Gosling at Sun Microsystems and first released in 1995</td>
+        </tr>
+
+        <tr>
+            <td>HTML</td>
+            <td>HTML was created by Tim Berners-Lee in 1991 while he was working at CERN</td>
+        </tr>
+    </table>
+</body>
+</html>
