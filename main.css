@@ -17,19 +17,48 @@ header{
     text-align: center;
 }
 
+/* this CSS will only apply to unordered lists in a nav section */
+nav ul{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+/* these styles only apply to list items in a list in a nav */
+nav ul li{
+    margin-bottom: 10px;
+    text-align: center;
+    display: inline;
+}
+
+/* style the links on the menu so they look better */
+nav ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 18px;
+    padding: 10px 20px; /*shorthand for 10px top and bottom; 20 px left and right */
+    border-radius: 5px;
+    background-color: indigo;
+    display: inline;
+}
+
+nav ul li a:hover{
+    color: indigo;
+    background-color: whitesmoke;
+}
+
 /* by default - create a box for the menu */
-nav{
+/* nav{
     height: 600px;
     width: 200px;
     float: left;
     padding: 5px;
     line-height: 30px;
-}
+} */
 
 /* add some footer styles */
 footer{
     text-align: center;
-    margin-right: 200px;
 }
 
 #memeImage{
