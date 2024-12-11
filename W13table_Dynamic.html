@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W13 Dynamic Table</title>
+    <style>
+        table{
+            width: 90%;
+            font-family: 'Times New Roman', Times, serif;
+            border-collapse: collapse;
+        }
+
+        th{
+            background-color:blue;
+            color: grey;
+            text-align: left;
+            border: 1px solid black;
+        }thank 
+
+        td, th{
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        tr:nth-child(even){
+            background-color: lightskyblue;
+        }
+        tr:hover{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <!-- We are just setting up the structure in thetable in HTML - no data; the data will be displayed in Javascript code -->
+    <table id="tblData">
+        <!-- set up the header row with the column headings -->
+         <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Job Title</th>
+         </tr>
+    </table>
+
+    <script>
+        // ArrEmployees is a 2 dimentional arrays - arrays within arrays
+        var arrEmployees = [
+            ['John Doe', 'HR', 'Generalist'], 
+            ['Jane Smith', 'Sales', 'Lead Generator'],
+            ['Emily Davis', 'IT', 'Network Administrator'],
+            ['Fred Jones', 'Management', 'CEO']
+        ];
+
+        //Function to build the table rows and colums to show the data
+        function displayData(){
+            // create the pointer to the HTML table element
+            var table = document.getElementById("tblData");
+
+            //loop through the 2-d arrEmployees
+            for (var i=0; i<arrEmployees.legnth; i++){
+                //set up a variable to hbold the employee info array
+                var employee = arrEmployees[i];
+
+                //build the table row
+                var row = document.createElement("tr");
+
+                //nested loop to build te columns / table data
+                for (var j=0; j<employee.length; j++){
+                    //create a cilumn for each piece of information about our employee
+                    var column = document.createElement("td");
+                    column.textContent = employee[j];
+
+                    // need to add this new column to the table row created in the outer loop
+                    row.appendChild(column);
+                }
+
+                //add this new row with the 3 columns of information to the table
+                table.appendChild(row);
+            }
+        }
+
+        //call the function to display the data
+        displayData();
+    </script>
+</body>
+</html>
+
+<!-- Do I need to have both this dynamic table and tuesday's table in the final? and if so should I change the data in the table?-->
